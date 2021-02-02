@@ -22,3 +22,19 @@ const solution = (a, b) => {
   let date = new Date(2016, a - 1, b);
   return date.toString().slice(0, 3).toUpperCase();
 };
+
+const solution = (a, b) => {
+  let month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  // 금요일보다 하루 전인 목요일부터 시작 ㄱㄱ
+  let days = ["THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"];
+  let count_day = 0;
+  let result = "";
+
+  for (let i = 0; i < a - 1; i++) {
+    count_day += month[i];
+  }
+  count_day += b; // 날짜 다 구했음.
+  result = days[count_day % 7];
+  return result;
+};

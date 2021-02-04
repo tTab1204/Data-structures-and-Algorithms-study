@@ -10,6 +10,7 @@ class BinarySearchTree {
   constructor() {
     this.root = null;
   }
+
   insert(value) {
     const newNode = new Node(value);
     if (this.root === null) {
@@ -49,7 +50,7 @@ class BinarySearchTree {
         return currentNode;
       }
     }
-    return null;
+    return false;
   }
 
   // 이해가 안된다.. 내가 이해한 코드로 다시 공부해보자.

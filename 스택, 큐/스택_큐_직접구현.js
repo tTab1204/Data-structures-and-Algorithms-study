@@ -1,3 +1,4 @@
+// 스택 두개로 큐 만들기!!
 const stack = () => {
   let stackArray = [];
   return {

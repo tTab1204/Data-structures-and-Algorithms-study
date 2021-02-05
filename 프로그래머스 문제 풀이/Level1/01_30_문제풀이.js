@@ -94,7 +94,7 @@ function solution(n) {
   let count = useSet(n).size;
   return count;
 }
-
+// https://taesung1993.tistory.com/14 (순열,재귀)
 // 근데 이것도.. 효율성이 안 좋게 나온다. 어떻게 해결해야 할까
 
 // 4. 가운데 글자 가져오기

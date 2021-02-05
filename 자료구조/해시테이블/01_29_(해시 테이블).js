@@ -24,7 +24,7 @@ const b = new Set();
 //It should return undefined
 
 // 내가 푼 방법
-function RepeateCharacter(arr) {
+function RepeatCharacter(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] === arr[j]) {
@@ -32,7 +32,7 @@ function RepeateCharacter(arr) {
       }
     }
   }
-  return undefined;
+  return 0;
 }
 
 // 강의에서 보여준 다른 방법

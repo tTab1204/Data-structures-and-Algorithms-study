@@ -187,7 +187,3 @@ function solution(s) {
     })
     .join(" ");
 }
-
-// 8. 크레인 인형뽑기 게임(2019 카카오 개발자 겨울 인턴십)
-// https://in-future.tistory.com/88 시간 내에 못 풀었으니 내일 참조하기
-function solution(board, moves) {}

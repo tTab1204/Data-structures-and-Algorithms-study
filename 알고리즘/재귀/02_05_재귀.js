@@ -47,12 +47,25 @@ findFactorialRecursive(5);
 //For example: fibonacciRecursive(6) should return 8
 
 function fibonacciIterative(n) {
-  //code here;
+  // O(n)
+  let arr = [0, 1];
+
+  for (let i = 2; i < n + 1; i++) {
+    arr.push(arr[i - 2] + arr[i - 1]);
+  }
+
+  return arr[n];
 }
 fibonacciIterative(3);
 
 function fibonacciRecursive(n) {
-  //code here;
+  // O(2^n)
+  if (n < 2) {
+    return n;
+  }
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
 }
 
-fibonacciRecursive(3);
+fibonacciRecursive(8);
+
+// 재귀: 가독성이 좋지만, 시간복잡도가 크다.

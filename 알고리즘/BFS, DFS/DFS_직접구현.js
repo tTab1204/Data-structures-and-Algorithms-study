@@ -196,9 +196,29 @@ function traverseInOrder(node, list) {
   }
   return list;
 }
-function traverseInOrder(node, list) {}
+function traversePreOrder(node, list) {
+  list.push(node.value);
+  if (node.left) {
+    traversePreOrder(node.left, list);
+  }
 
-function traverseInOrder(node, list) {}
+  if (node.right) {
+    traversePreOrder(node.right, list);
+  }
+  return list;
+}
+
+function traversePostOrder(node, list) {
+  if (node.left) {
+    traversePostOrder(node.left, list);
+  }
+
+  if (node.right) {
+    traversePostOrder(node.right, list);
+  }
+  list.push(node.value);
+  return list;
+}
 
 const tree = new BinarySearchTree();
 tree.insert(9);

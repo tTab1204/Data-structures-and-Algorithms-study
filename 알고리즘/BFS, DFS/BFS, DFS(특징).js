@@ -1,7 +1,7 @@
-// BFS(너비 우선 탐색) - 메모리가 더 많이 듬.
+// BFS(너비 우선 탐색) - 메모리가 더 많이 듬, 최단거리
 // Shortest Path, Closer Nodes
 
-// DFS(깊이 우선 탐색) - 메모리가 더 적게 듬.
+// DFS(깊이 우선 탐색) - 메모리가 더 적게 듬, 해당 요소가 존재하는지 확인 가능
 
 //If you know a solution is not far from the root of the tree:
 // BFS

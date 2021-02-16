@@ -15,5 +15,3 @@ function solution(d, budget) {
 
   return answer;
 }
-
-// 2.

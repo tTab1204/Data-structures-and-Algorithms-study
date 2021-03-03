@@ -120,9 +120,14 @@ function solution(n) {
   }
 
   //어떻게 풀었지?
-
+ 
 // 4. 숫자의 표현
-function solution(n) {
+function solution(num) { 
+  var answer = 0; 
+  for(var i=1; i<=num; i++) { 
+    if (num%i == 0 && i%2 == 1) answer++ 
+  } 
+    return answer; 
+  }
 
-    
-}
+  // 어떻게 푼지 모르겠다.

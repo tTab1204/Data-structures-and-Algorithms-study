@@ -94,3 +94,63 @@ function solution(participant, completion) {
 }
 
 // 해시로 푸는 것 이해했다!
+
+// 3. 올바른 괄호
+
+const solution = (s) => {
+  let sum = 0;
+
+  if (s[s.length - 1] === "(") return false;
+
+  for (let i = 0; i < s.length; i++) {
+    s[i] === "(" ? sum++ : sum--;
+    // 순차적으로 탐색할 때, "(" 갯수를 ")"가 넘어서는 안된다.
+    if (sum < 0) return false;
+  }
+
+  return sum === 0 ? true : false;
+};
+
+// 4. 문자열 내 마음대로 정렬하기
+
+const solution = (strings, n) => {
+  return strings.sort((a, b) =>
+    a[n] === b[n] ? a.localeCompare(b) : a[n].localeCompare(b[n])
+  );
+};
+
+// 화살표 함수 중괄호, 괄호 쓸 때 확실히 구분하기.
+
+// 이것도 다시 이해해보기. 내 생각으로는 못 푼거라서.
+
+// 5. 같은 숫자는 싫어
+
+// 중복제거? Set객체 이용?
+
+const solution = (arr) => {
+  let temp = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[i + 1]) temp.push(arr[i]);
+  }
+  return temp;
+};
+
+// 6. 두 정수 사이의 합
+const solution = (a, b) => {
+  let answer = [];
+
+  if (a < b) {
+    for (let i = a; i <= b; i++) {
+      answer.push(i);
+    }
+  } else {
+    for (let i = b; i <= a; i++) {
+      answer.push(i);
+    }
+  }
+
+  const reducer = (a, b) => a + b;
+
+  return answer.reduce(reducer);
+};

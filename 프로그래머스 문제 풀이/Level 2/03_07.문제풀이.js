@@ -1,4 +1,6 @@
-// 1. 124 나라의 숫자 (다시 풀기)
+// 풀었던 문제 다시풀기
+
+// 1. 124 나라의 숫자
 
 function solution(n) {
   let answer = "";
@@ -23,7 +25,7 @@ function solution(n) {
   return answer;
 }
 
-// 2. 두 개 뽑아서 더하기 (다시 풀기)
+// 2. 두 개 뽑아서 더하기
 
 function solution(numbers) {
   const answer = [];

@@ -216,10 +216,3 @@ function solution(N, stages) {
     .sort((a, b) => b[1] - a[1])
     .map((el) => el[2]);
 }
-
-// 5. 키패드
-function solution(numbers, hand) {
-  let answer = "";
-
-  return answer;
-}

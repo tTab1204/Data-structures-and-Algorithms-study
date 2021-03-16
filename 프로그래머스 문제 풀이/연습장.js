@@ -1,23 +1,6 @@
-// 다음 큰 숫자
-function solution(n) {
-  let answer = 0;
-  let target = n + 1;
-  let newN = n.toString(2);
-  let nOneLength = newN.split("").filter((item) => item === "1").length;
-
-  while (target > n) {
-    if (
-      nOneLength ===
-      target
-        .toString(2)
-        .split("")
-        .filter((item) => item === "1").length
-    ) {
-      break;
-    }
-    target = target + 1;
+function solution(s) {
+  if (s.length === 4 || s.length === 6) {
+    return s.split("").every((item) => !isNaN(item));
   }
-  answer = target;
-
-  return answer;
+  return false;
 }

@@ -40,24 +40,22 @@ function solution(numbers, hand) {
 
 // 2. 구명보트
 function solution(people, limit) {
-  let boatPeople = [];
+  const sortedPeople = people.sort((a, b) => a - b);
+
+  let first = 0;
+  let last = people.length - 1;
   let boat = 0;
-  for (let i = 0; i < people.length; i++) {
-    // 두 원소의 합이 limit보다 작은 모든 경우의 수를 구하기 위하여 2중 for문
-    for (let j = i; j < people.length - i; j++) {
-      // people 배열의 두 원소의 합이 limit보다 작거나 같은 경우를 구하기.
-      if (people[i] + people[j] <= limit) {
-        // 그 때 그 두 원소는 boatPeople배열에 push하고 구명보트의 갯수를 +1 해준다.
-        // (이걸 반복)
-        boat++;
-        boatPeople.push(people[i]);
-        boatPeople.push(people[j]);
-        // boatPeople배열의 길이를 people.length에서 빼주고 남은 길이를 구한다.
-      }
+
+  while (first <= last) {
+    if (sortedPeople[first] + sortedPeople[last] <= limit) {
+      first++;
     }
+
+    last--;
+    boat++;
   }
-  let answer = people.length - boatPeople.length;
-  return answer + boat;
+  return boat;
 }
 
-// 이씨 이중 for문 쓰면 안되나보다.
+// 신기
+// 이해했는데 다음에 다시 풀기

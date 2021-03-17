@@ -120,23 +120,17 @@ solution(numbers);
 // 5. 카펫
 function solution(brown, yellow) {
   let sum = brown + yellow;
-  let n = 3;
   let temp = [];
+  // Math.floor를 사용한 이유: 정수값을 얻기 위해서
+  for (let i = Math.floor(sum / 2); i > 0; i--) {
+    if (sum % i !== 0) continue;
 
-  if (sum % 2 === 1) {
-    // 조건 2 : 짝수는 x+y의 약수를 나열 했을 때, (x+y)/2 바로 앞에 있는 두 수가 된다.
-    for (let i = 0; i < sum / 2; i++) {
-      if (sum % i === 0) temp.push(i);
-    }
-    return [temp[temp.length - 1], temp[temp.length - 2]];
-  }
-  // 홀수일 때는 제곱했을 때 밖에 없음.
-  else {
-    while (n * n < sum) {
-      if (n * n === sum) {
-        return n;
-      }
-      n++;
+    let width = i;
+    let height = sum / i;
+
+    if ((width - 2) * (height - 2) === yellow) {
+      return [width, height];
     }
   }
 }
+

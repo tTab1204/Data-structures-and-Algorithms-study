@@ -104,34 +104,22 @@ function solution(s) {
 
 // 5. 땅따먹기
 
-function solution (land) {
-
+function solution(land) {
   let sum = 0;
 
-  for(let i = 0; i<land.length; i++) {
-    for(let j = 0; j<land[i].length; j++) {
-      max = Math.max(land[i])
-
- 
-
-      
-
+  for (let i = 0; i < land.length; i++) {
+    for (let j = 0; j < land[i].length; j++) {
+      max = Math.max(land[i]);
     }
   }
 
   land.forEach((item, i) => {
-    for(let j = 0; j<item.length; j++) {
-      max = Math.max(item)
-
-      
+    for (let j = 0; j < item.length; j++) {
+      max = Math.max(item);
     }
   });
-
 }
-5, 8, 4
+5, 8, 4;
 
 // 행의 개수 N: land.length
-
-j의 값이 같으면 안됨. 그러면 해당 배열에서 다음으로 큰 값 구함.
-i개의 max를 전부 더해준다.
- 그럼 답임.
+// ???????????????? 나중에 다시 풀자.. 또 못 풀었다..

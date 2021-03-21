@@ -74,14 +74,14 @@ function solution(n, words) {
   let order = 0; // 몇번째 차례인지 구하려고
 
   for (let i = 0; i < words.length; i++) {
-    words[i].split("");
-    for (let j = 0; j < words[i].length; j++) {
-      // 탈락조건 1 (끝이 다른 글자를 말했을 때)
-      if (words[i][j.length - 1] !== words[i + 1][0]) {
-        dup = i + 1;
-        break;
-      }
+    let subArr = words.slice(0, i);
+
+    // 탈락조건 1 (끝이 다른 글자를 말했을 때)
+    if (words[i - 1].substring(words[i - 1].length - 1) !== words[i][0]) {
+      dup = i;
+      break;
     }
+
     // 탈락조건 2 (말했던 단어 또 말했을 때 = 중복일 때)
     if (words.indexOf(words[i]) !== words.lastIndexOf(words[i])) {
       dup = words.lastIndexOf(words[i]); // 이게 인덱스를 찾아주니까
@@ -104,3 +104,5 @@ function solution(n, words) {
 // words[i][j.length -1] !== words[i+1][0]
 
 // 그 외의 조건은 성공, 그럴 떈 [0, 0]을 return 한다.
+
+// 거의 다 푼 것 같은데.. 나중에 다시 하자.

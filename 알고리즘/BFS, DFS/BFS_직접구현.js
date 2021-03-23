@@ -136,6 +136,7 @@ class BinarySearchTree {
     queue.push(currentNode);
 
     while (queue.length > 0) {
+      // 맨 처음의 노드를 꺼낸다.
       currentNode = queue.shift();
       list.push(currentNode.value);
       if (currentNode.left) {

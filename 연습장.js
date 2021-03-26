@@ -32,3 +32,15 @@ function solution(n) {
   return answerNum;
 }
 // 왜 시간초과지 왜 시간초과지 왜 시간초과인데
+
+// 동적 프로그래밍
+
+const memory = [0];
+
+const fibonacci = (n) => {
+  if (n === 1) return 1;
+  if (n === 2) return 2;
+  if (memory[n] !== null) return memory[n];
+
+  return (memory[n] = fibonacci(n - 1) + fibonacci(n - 2));
+};

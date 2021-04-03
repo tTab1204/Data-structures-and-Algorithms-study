@@ -1,19 +1,31 @@
 class Graph {
   constructor() {
+    // 노드 개수
     this.numberOfNodes = 0;
+
+    // 인접리스트(객체)
     this.adjacentList = {};
   }
+
+  // 노드 추가
   addVertex(node) {
+    // 배열로 선언
     this.adjacentList[node] = [];
     this.numberOfNodes++;
   }
+
+  // 간선 추가
   addEdge(fromNode, toNode) {
-    //undirected Graph
+    // undirected Graph (무방향 그래프)
     // 여기서 node1은 adjacentList객체의 key다.
+
+    // https://taesung1993.tistory.com/35?category=868017 << 이 블로그에 따르면
+    // 꼬리(=fromNode), 머리(=toNode)
     this.adjacentList[fromNode].push(toNode);
     this.adjacentList[toNode].push(fromNode);
   }
   showConnections() {
+    // allNodes = 정점의 집합 (배열로 반환 -> Object.keys가 배열로 반환함)
     const allNodes = Object.keys(this.adjacentList);
     for (let node of allNodes) {
       let nodeConnections = this.adjacentList[node];

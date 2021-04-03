@@ -38,7 +38,7 @@ class PriorityQueue {
 
   dequeue() {
     if (this.list.length === 0) {
-      return;
+      return "return해줄게 없습니다.";
     }
     // 왜 이게 shift()지?
     // 아 어차피 우선순위 큐는 우선순위가 높은 요소가 먼저 나가는 자료구조니까

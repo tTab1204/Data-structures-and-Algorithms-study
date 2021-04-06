@@ -89,3 +89,25 @@ const fibonacci = (n) => {
 
 // 내가 이해한 것: 저장할 공간을 만들어두고, 다시 탐색할 때 일일이 탐색할 필요 없이
 // 저장 되어 있는 걸 갖고와서 쓰면 된다. - 이게 동적 프로그래밍.
+
+//-----------------------04.06_다이나믹 프로그래밍 다시 공부----------------------//
+
+// 피보나치 수열
+const fibonacci = (n) => {
+  if (n === 1) return 1;
+  if (n === 2) return 2;
+  return fibonacci(n - 2) + fibonacci(n - 1);
+};
+
+fibonacci(5);
+
+const memory = [0];
+
+// 다이나믹 프로그래밍 기본 개념
+const fibonacci = (n) => {
+  if (n === 1) return 1;
+  if (n === 2) return 1;
+  if (memory[n] !== null) return memory[n];
+
+  return (memory[n] = fibonacci(n - 1) + fibonacci(n - 2));
+};

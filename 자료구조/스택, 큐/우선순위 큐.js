@@ -54,3 +54,28 @@ queue.enqueue(8, 1);
 console.log(queue);
 
 // 우선순위 큐는 이해했다.
+
+/**
+ * @param {number[]} stones
+ * @return {number}
+ */
+var lastStoneWeight = function (stones) {
+  var q = new PriorityQueue();
+
+  for (var i = 0; i < stones.length; i++) {
+    q.push(stones[i]);
+  }
+
+  while (q.queue.length > 1) {
+    var stone1 = q.pop();
+    var stone2 = q.pop();
+
+    var weight = stone1 - stone2;
+
+    if (weight !== 0) {
+      q.push(weight);
+    }
+  }
+
+  return q.queue.length === 1 ? q.queue[0] : 0;
+};

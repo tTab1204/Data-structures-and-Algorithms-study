@@ -1,24 +1,18 @@
-var countNegatives = function (grid) {
-  let width = grid[0].length;
-  let height = grid.length;
+var findContentChildren = function (g, s) {
+  g = g.sort((a, b) => a - b);
+  s = s.sort((a, b) => a - b);
 
-  let c = 0;
-  let r = height - 1;
-  let answer = 0;
-
-  while (c < width && r >= 0) {
-    // 양수일 때
-    if (grid[r][c] >= 0) {
-      // 뒤에 더 찾아주고
-      c++;
+  let cnt = 0;
+  let i = 0;
+  let j = 0;
+  // 반복문을 돌자
+  // 어차피 s 다 돌면 더 이상 g를 돌 필요가 없기 때문이당
+  while (i < s.length) {
+    if (s[i] >= g[j]) {
+      cnt++;
+      j++;
     }
-
-    // 음수일 때
-    else {
-      // 찾았으니 row를 바꿔주며 다시 찾아보자.
-      answer = answer + (width - c);
-      r--;
-    }
+    i++;
   }
-  return answer;
+  return cnt;
 };

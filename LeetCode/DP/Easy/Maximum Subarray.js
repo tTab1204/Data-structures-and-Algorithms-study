@@ -20,7 +20,7 @@ var maxSubArray = function (nums) {
 // 여기 블로그 주인분 덕분에 너무 이해 잘 됐습니다.. 감사합니당
 
 // 다른 사람의 풀이
-// 이건 천재인가?
+
 var maxSubArray = function (nums) {
   for (let i = 1; i < nums.length; i++) {
     // 여기서 nums[i-1] 자체가 localMax를 의미하니까

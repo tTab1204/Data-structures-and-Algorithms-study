@@ -43,7 +43,7 @@ var findJudge = function (N, trust) {
   return -1;
 };
 
-// 이거 나중에 이해할 수 있는 사람에게 물어봐야함.
+// 으어 이해됐다..
 
 trust = [
   [1, 3],
